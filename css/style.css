@@ -76,7 +76,7 @@ a {
 	z-index: 999;
 	position: absolute;
 	left: 50%;
-	top: 105px;
+	top: 128px;
 	transform: translateX(-50%);
 }
 .navbar-dark .navbar-nav .nav-item {
@@ -207,7 +207,7 @@ a {
 
 /* Subscribe Style */
 .subscribe-form {
-	background-color: #3a8bcd;
+	background-color: #ff4901;
 	padding: 80px 0px;
 	text-align: center;
 }
@@ -737,4 +737,20 @@ a {
 		text-align: left;
 	} 
 
+}
+
+::placeholder {
+	color: #fff
+}
+
+#email {
+	position: relative;
+}
+
+.invalid {
+	border-color: #F00;
+}
+
+.text-muted {
+	display: none;
 }

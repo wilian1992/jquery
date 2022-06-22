@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./vendor/owl/css/owl.css">
     <link rel="stylesheet" href="./vendor/fontawesome/fontawesome.css">
+    <link rel="stylesheet" href="./vendor/jquery-ui/jquery-ui.min.css">
+
     <link rel="stylesheet" href="./css/style.css">
-    <title>e-commerce</title>
+    <title>WebStore - Loja especializada</title>
 </head>
 <body>
     
@@ -26,13 +28,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="products.html">Produtos</a>
+                        <a class="nav-link" href="#produtos" >Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">Sobre nós</a>
+                        <a class="nav-link nav-modal-open" href="#sobre" rel="sobre">Sobre nós</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contato</a>
+                        <a class="nav-link nav-modal-open" href="#contato" rel="contato">Contato</a>
                     </li>
                 </ul>
             </div>
@@ -44,9 +46,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="caption">
-                        <h2>Ecommerce HTML Template</h2>
+                        <h2>Nova coleção</h2>
                         <div class="line-dec"></div>
-                        <p>HTML Template can be converted into your desired CMS theme. </p>
+                        <p>Confira os novos itens da nossa nova coleção de roupas</p>
                     </div>
                 </div>
             </div>
@@ -142,6 +144,40 @@
         </div>
     </div>
     
+    <div class="subscribe-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <div class="line-dec"></div>
+                        <h1>Receba novidades</h1>
+                    </div>
+                </div>
+                <div class="col-md-8 offset-md-2">
+                    <div class="main-content">
+                        <p>Insira seus dados abaixo para receber informações atualizadas de nossos produtos</p>
+                        <div class="container">
+                            <form id="subscribe" class="form" action="" method="get">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <fieldset>
+                                            <input name="email" type="text" class="form-control" id="email" value="" placeholder="Seu e-mail..." >
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <fieldset>
+                                            <button type="submit" id="form-submit" class="button">Inscreva-se</button>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="footer">
         <div class="container">
             <div class="row">
@@ -153,11 +189,10 @@
                 <div class="col-md-12">
                     <div class="footer-menu">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">How It Works ?</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#top">Home</a></li>
+                            <li><a href="#produtos">Produtos</a></li>
+                            <li><a href="#sobre" rel="sobre" class="nav-modal-open">Sobre</a></li>
+                            <li><a href="#contato" rel="contato" class="nav-modal-open">Contato</a></li>
                         </ul>
                     </div>
                 </div>
@@ -167,7 +202,6 @@
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -180,16 +214,111 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="copyright-text">
-                        <p>WebStore &copy; Todos os direitos reservados
-                        </div>
+                        <p>WebStore &copy; Todos os direitos reservados</p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <script src="./vendor/jquery/jquery-3.6.0.min.js"></script>
-        <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="./vendor/owl/js/owl.js"></script>
-        <script src="./js/custom.js"></script>
-    </body>
-    </html>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">              
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="contato" class="visually-hidden">
+
+        <form action="post" class="form">
+
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" name="nome" id="nome" title="Insira seu nome completo" class="form-control" placeholder="Digite seu nome" aria-describedby="helpNome">
+              <small id="helpNome" class="text-muted">
+                  Digite um nome válido
+              </small>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" name="email" id="email" class="form-control" placeholder="Digite seu e-mail" aria-describedby="helpEmail">
+                <small id="helpEmail" class="text-muted">
+                    Digite um e-mail válido
+                </small>
+            </div>
+
+            <div class="mb-3">
+                <label for="date" class="form-label">Data</label>
+                <input type="text" name="date" id="date" class="form-control" placeholder="Digite seu e-mail" aria-describedby="helpDate">
+                <small id="helpDate" class="text-muted">
+                    Digite uma data válida
+                </small>
+            </div>
+
+            <div class="mb-3">
+                <label for="time" class="form-label">Hora</label>
+                <input type="text" name="time" id="time" class="form-control" placeholder="Digite a hora" aria-describedby="helpHora">
+                <small id="helpHora" class="text-muted">
+                    Digite um tempo válido
+                </small>
+            </div>
+
+            <div class="mb-3">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" name="cep" id="cep" class="form-control" placeholder="Digite seu cep" aria-describedby="helpCEP">
+                <small id="helpCEP" class="text-muted">
+                    Digite um tempo válido
+                </small>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Celular</label>
+                <input type="text" name="phone" id="phone" class="form-control" placeholder="Digite seu phone" aria-describedby="helpCelular" required>
+                <small id="helpCelular" class="text-muted">
+                    Digite um celular válido
+                </small>
+            </div>
+
+            <div class="mb-3">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Digite seu cpf" aria-describedby="helpCPF" required>
+                <small id="helpCPF" class="text-muted">
+                    Digite um celular válido
+                </small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+
+
+        </form>
+
+    </div>
+
+
+    <div id="sobre" class="visually-hidden">
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, consequatur explicabo eos doloribus suscipit impedit nulla voluptates eius ad sint fugiat, atque corrupti, pariatur nobis dignissimos! Ut at tempore recusandae?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, consequatur explicabo eos doloribus suscipit impedit nulla voluptates eius ad sint fugiat, atque corrupti, pariatur nobis dignissimos! Ut at tempore recusandae?</p>
+
+    </div>
+    
+    <!-- Bibliotecas -->
+    <script src="./vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./vendor/owl/js/owl.js"></script>
+    <script src="./vendor/jquery-mask/jquery.mask.min.js"></script>
+    <script src="./vendor/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- Scripts Customizados -->
+    <script src="./js/custom.js"></script>
+</body>
+</html>

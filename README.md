@@ -26,3 +26,7 @@
     $('div h4')
 
 ```
+
+
+## Plugins
+jQuery Mask https://igorescobar.github.io/jQuery-Mask-Plugin
