@@ -160,10 +160,12 @@
    
       $('body').on('blur', '#nome', function(){
          validate($(this))
+         $(this).mask('');
       })
    
       $('body').on('blur', '#email', function(){
          validate($(this))
+         $(this).mask('');
       })
    
    
